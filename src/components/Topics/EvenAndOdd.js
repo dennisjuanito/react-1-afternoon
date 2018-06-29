@@ -17,7 +17,7 @@ export default class EvenAndOdd extends Component {
     }
 
     handleUserClick(val) {
-        if (this.state.userInput % 2 === 0) {
+        /* if (this.state.userInput % 2 === 0) {
             let newArrayEven = this.state.evenArray.slice(0);
             newArrayEven.push(val);
             this.setState({evenArray: newArrayEven});
@@ -26,6 +26,22 @@ export default class EvenAndOdd extends Component {
             newArrayOdd.push(val);
             this.setState({oddArray: newArrayOdd});
         }  
+ */
+        let newArray = this.state.userInput.split(",");
+        let newEvenArray = [];
+        let newOddArray = [];
+
+        for (let i = 0; i < newArray.length; i++) {
+            if (newArray[i] % 2 === 0) {
+                newEvenArray.push(newArray[i]);
+            } else { // user input is odd
+                newOddArray.push(newArray[i]);
+            }          
+        }
+        this.setState({evenArray: newEvenArray});
+        this.setState({oddArray: newOddArray});
+
+
     }
 
 

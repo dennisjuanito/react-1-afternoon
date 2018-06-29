@@ -5,7 +5,7 @@ export default class Palindrome extends Component {
         super();
         this.state = {
             userInput  : '',
-            palindrome : ""
+            palindrome : ''
         }
         
     }
@@ -22,7 +22,7 @@ export default class Palindrome extends Component {
         for (let i = 0; i < palindromeArr.length / 2; i++) {
             if (palindromeArr[i] !== palindromeArr[palindromeArr.length - i - 1]) {
                 this.setState({
-                    palindrome: false
+                    palindrome: "false"
                 })
                 return;
             }  
@@ -37,8 +37,8 @@ export default class Palindrome extends Component {
             <div className="puzzleBox filterStringPB">
                 <h4>Palindrome</h4>
                 <input className="inputLine" onChange={(e) => this.handleUserInput(e.target.value)} />
-                <button className="confirmationButton" onClick={() => this.handleUserClick()}>Filter</button>
-                <span className="resultsBox filterStringRB">Palindrome: {JSON.stringify(this.state.palindrome)}</span>
+                <button className="confirmationButton" onClick={() => this.handleUserClick()}>Check</button>
+                <span className="resultsBox filterStringRB">Palindrome: {this.state.palindrome}</span>
             </div>
     )
   }
